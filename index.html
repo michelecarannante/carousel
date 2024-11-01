@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carosello Immagini 3D</title>
+<style>
+  :root {
+    --carousel-transition-duration: 250ms;
+    --carousel-item-width: 11.5rem;
+    --carousel-item-height: 17.5rem;
+    --carousel-bg-color: #000;
+    --carousel-item-glow-color: #fff;
+    --carousel-item-glow-size: 5rem;
+    --carousel-diameter: 50rem;
+    --carousel-3d-perspective: 1000px;
+    --carousel-animation-duration: 25s;
+  }
+
+  /* Global Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--carousel-bg-color);
+    overflow: hidden;
+  }
+
+  /* Carousel */
+  .carousel {
+    --carousel-radius: calc(var(--carousel-diameter) / 2);
+    perspective: var(--carousel-3d-perspective);
+    width: var(--carousel-diameter);
+    height: var(--carousel-diameter);
+    position: relative;
+  }
+
+  .carousel-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate-carousel var(--carousel-animation-duration) linear infinite;
+  }
+
+  .carousel-item {
+    position: absolute;
+    width: var(--carousel-item-width);
+    height: var(--carousel-item-height);
+    top: 50%;
+    left: 50%;
+    transform-origin: center center calc(-1 * var(--carousel-radius));
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--carousel-transition-duration);
+  }
+
+  /* Animazione di rotazione */
+  @keyframes rotate-carousel {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+
+  /* Hover Effect */
+  .carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 var(--carousel-item-glow-size) var(--carousel-item-glow-color);
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="carousel-items">
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-7-1.jpeg'); transform: rotateY(calc(360deg / 16 * 0));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-27-at-15.21.23-2.jpeg'); transform: rotateY(calc(360deg / 16 * 1));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-16.03.08-1-scaled.jpeg'); transform: rotateY(calc(360deg / 16 * 2));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-2-1.jpeg'); transform: rotateY(calc(360deg / 16 * 3));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.44.11.jpeg'); transform: rotateY(calc(360deg / 16 * 4));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27.jpeg'); transform: rotateY(calc(360deg / 16 * 5));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-8.jpeg'); transform: rotateY(calc(360deg / 16 * 6));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-7.jpeg'); transform: rotateY(calc(360deg / 16 * 7));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-6.jpeg'); transform: rotateY(calc(360deg / 16 * 8));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-6.jpeg'); transform: rotateY(calc(360deg / 16 * 9));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/WhatsApp-Image-2024-08-15-at-15.42.27-1.jpeg'); transform: rotateY(calc(360deg / 16 * 10));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/Portrait_Perfect_Scylla_a_stunning_sea_nymph_from_Greek_mythol_3.jpg'); transform: rotateY(calc(360deg / 16 * 11));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/09/Lifelike_Vision_Scylla_a_stunning_sea_nymph_from_Greek_mytholo_0.jpg'); transform: rotateY(calc(360deg / 16 * 12));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/11/Leonardo_Phoenix_A_dramatic_and_cinematic_photograph_of_Scylla_0-1.jpg'); transform: rotateY(calc(360deg / 16 * 13));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/11/Leonardo_Phoenix_A_dramatic_and_cinematic_photograph_of_Scylla_0.jpg'); transform: rotateY(calc(360deg / 16 * 14));"></div>
+    <div class="carousel-item" style="background-image: url('https://www.scillacariddirentalboat.it/wp-content/uploads/2024/11/Leonardo_Phoenix_A_dramatic_and_cinematic_photograph_of_Scylla_3.jpg'); transform: rotateY(calc(360deg / 16 * 15));"></div>
+  </div>
+</div>
+
+</body>
+</html>
